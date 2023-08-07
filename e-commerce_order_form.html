@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito">
+	<link rel="stylesheet" href="navBar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Your Order</title>
+
+	<!--css styling-->
+	<style>
+		* {
+          box-sizing: border-box;
+        }
+
+       .row{
+        display: flex;
+
+       }
+
+       .column{
+        flex: 50%;
+        padding: 30px;
+        margin-bottom: 60px;
+       }
+
+       .column2{
+        flex: 50%;
+        padding:1px;
+        margin-bottom: -20px;
+       }
+
+        @media screen and (max-width: 600px) {
+          .column {
+            width: 100%;
+          }
+          .content {
+            width: 100%;
+          }
+        }
+
+        body {
+          font-family: Nunito;
+          margin: 0;
+          background-color: whitesmoke;
+          font-size: 18px;
+        }
+
+       	
+				.margin {
+				  margin-left: 50px;
+				}
+
+        .content {
+          flex: 50%;
+          padding: 30px;
+         margin-bottom: 60px;
+          background-color: white;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+          margin-right: 50px;
+          margin-left: 50px;
+        }
+
+        .textblue {
+          color: blue;
+          font-weight: bold;
+        }
+
+        .content .required {
+          color: indianred;
+        }
+
+        /* css for quantity counter*/
+        .cntr {
+           appearance:none;
+           border: 0;
+           background: #a42626;
+           text-align: center;
+           width:42px;
+           line-height:24px;
+           font-size:15px;
+           border-radius:5px;
+           color:white;
+        }
+
+        .image-container {
+          display: flex; /* Use flexbox to align items */
+          align-items: center; /* Vertically align items */
+        }
+        .image-container img {
+          width: 200px; /* Adjust the width as per your requirements */
+          height: auto; /* Maintain aspect ratio */
+          margin-right: 10px;
+        }
+        .producttext {
+              font-family: Nunito; /* Change the font as desired */
+            }
+        .productname{
+         
+          font-size: 20px;
+          font-weight: bold;
+        }
+
+        .otherstext{
+
+          font-size: 16px;
+          font-weight: bold;
+          color: gray;
+          margin-top: 5px;
+          display: block;
+        }
+
+        .orderbutton{
+          color: #fff; 
+          background-color: #a42626; 
+          border-color: #a42626; 
+          border-radius:5px; 
+          font-weight: bold;
+          font-size: 15px ;
+          font-family: Nunito;
+          height:40px;
+          width:100px;
+          border-style: solid;
+          flex: 50%;
+        }
+
+          .label {
+            border-radius: 5px ; 
+            border-style: solid;
+            border-color: lightgray;
+            height: 30px;
+
+
+        }
+         fieldset {
+        margin-top: 20px;
+        border: 2px solid #ccc;
+        border-radius: 7px;
+        padding: 30px;
+        }
+
+         .footer {
+    
+	      padding: 20px;
+	      padding-top: 20px;
+	      padding-right: 20px;
+	      padding-bottom: 20px;
+	      padding-left: 20px;
+	      text-align: center;
+	      background: whitesmoke;
+	      color: black;
+	      box-sizing: auto;
+    		}
+
+    		/*promo code*/
+
+				.input-group {
+				  position: relative;
+				  display: -ms-flexbox;
+				  display: flex;
+				  -ms-flex-wrap: wrap;
+				  flex-wrap: wrap;
+				  -ms-flex-align: stretch;
+				  align-items: stretch;
+				  width: 100%;
+				 }
+
+				
+					.input-group-append {
+				  margin-left: -1px;
+				  display: flex;
+				}
+        
+        .redeembutton {
+          color: #fff; 
+          background-color:#a42626; 
+          border-color: #a42626; 
+          border-radius:5px; 
+          font-weight: bold;
+          font-size: 15px ;
+          font-family: Nunito;
+          height:50px;
+          width:100px;
+          border-style: solid;
+          flex: 50%;
+        
+				}
+
+
+				.input-group-append {
+				  margin-left: -1px;
+				  display: flex;
+				}
+
+
+
+        /*showhide function*/
+        #paydebit {
+          display:none;
+        }
+
+        #debit:checked ~ #paydebit {
+          display: block;
+        }
+
+        #paybank {
+          display: none;
+        }
+
+        #bank:checked ~ #paybank {
+          display: block;
+        }
+       
+	</style>
+</head>
+
+<body>
+	<!--navigation bar sit on top-->
+  <div class="w3-top">
+	  <div class="w3-bar w3-white w3-card" id="myNavbar">
+	    <a href="index.html" class="w3-bar-item w3-button w3-wide">ZJAI</a>
+		
+	    <!-- Right-sided navbar links -->
+			<div class="navbar">
+			  <a href="ContactUs.html">CONTACT <i class="fa fa-envelope"></i></a>
+			  <a href="aboutus.html">ABOUT US <i class="fa fa-user"></i></a>
+			 <div class="dropdown">
+			    <button class="dropbtn">CATEGORIES 
+			      <i class="fa fa-shopping-cart"></i>
+			    </button>
+			    <div class="dropdown-content">
+			      <a href="Sneakers.html">Sneakers<i class="fa fa-cart-plus"></i></a>
+			      <a href="Sandals.html">Sandals<i class="fa fa-cart-plus"></i></a>
+			    </div>
+			  </div> 
+			 </div>
+			</div>
+		</div>	
+	</div>
+	<!--<div class="header"></div>-->
+	<h1 style="text-align: center; color: black;">Your Order
+		<i style="font-size:30px;"></i>
+	</h1>
+
+	<!--all column-->
+	<div class="content">
+		<div class="row">
+			<!--column info details-->
+			<div class="column" style=" margin-left: 50px;">
+				<form name="myform" method="post" action="#">
+					<h3>Enter Your Information:</h3>
+					<b>Delivery Information <i style="font-size:25px;"></i></b>
+					<!--start info fill in-->
+					<div class=" row column2">
+						<p>
+							<label> First Name:<span class="required">*</span> <input class="label" type="text" name="firstname" size="35" maxlength="35" required></label><br>
+						</p>
+						<p>
+							<label> Last Name:<span class="required">*</span> <input class="label" type="text" name="lastname" size="35" maxlength="35" required></label><br>
+						</p>
+					</div>
+					<!--email-->
+					<p>
+						<div class="row">
+							<label>Email:<span class="required">*</span><br><input class="label" type="email" name="email" size="75"maxlength="75"></label>
+						</div>
+					</p>
+					<p>
+						<div class="row">
+							<label> Phone Number:<span class="required">*</span><br> <input class="label" type="text" id="phone" name="phone" size="75"maxlength="75"required></label><br>
+						</div>
+					</p>
+					<p>
+						Address:<span class="required">*</span><br>
+             			<textarea style="border-radius: 5px; border-style: solid; border-color: lightgray ;"rows="5" cols="67" id="comments" placeholder="Enter your delivery address here.">
+             			</textarea>
+					</p>
+					<!--state-->
+					<div class="row">
+						<p>
+							State:
+              				<select class="label"name="Country">
+				                <option value="0" selected>choose your state</option>
+				                <option value="1">Perlis</option>
+				                <option value="2">Kedah</option>
+				                <option value="3">Pulau Pinang</option>
+				                <option value="4">Perak</option>
+				                <option value="5">Selangor</option>
+				                <option value="6">Kuala Lumpur</option>
+				                <option value="7">Terengganu</option>
+				                <option value="8">Kelantan</option>
+				                <option value="9">Pahang</option>
+				                <option value="10">Negeri Sembilan</option>
+				                <option value="11">Johor</option>
+				                <option value="12">Melaka</option>
+				                <option value="13">Sabah</option>
+				                <option value="14">Sarawak</option>
+              				</select>
+						</p>
+						<!--city-->
+						<p>
+							<label>
+								City<span class="required">*</span> 
+								<input class="label" type="text" name="city" placeholder="Butterworth" required>
+							</label><br>
+						</p>
+						<!--postal-->
+						<p>
+							<label>
+								Postal Code: 
+								<input class="label" type="text" name="postcode" maxlength="10" size="10" placeholder="13800" required>
+							</label><br>
+						</p>
+					</div>
+					<!--start to radio box-->
+					<hr>
+					<p>
+						<b>Payment Information</b>
+					</p>
+						Select your payment option:<br>
+	                  <input type="radio" name="payment" id="bank" value="bank" checked> Online Banking<br>
+	                  <input type="radio" name="payment" id="debit" value="debit"> Credit / Debit Card<br>
+	                  <input type="radio" name="payment" value="7e"> Cash Payment at 7-Eleven<br>
+	                <br>
+	                <!--option for online and card payment-->
+	                <div id="paybank">
+	                	<div class="textblue">
+	                		Online Banking
+	                	</div>
+	                	<p>Select your bank</p>
+	                	<p>
+	                		Bank Name:
+			              <select class="label" name="bankname">
+				                <option value="0" selected>Select your bank</option>
+				                <option value="1">Maybank</option>
+				                <option value="2">CIMB Bank</option>
+				                <option value="3">Public Bank Berhad</option>
+				                <option value="4">RHB Bank</option>
+				                <option value="5">Hong Leong Bank</option>
+				                <option value="6">AmBank</option>
+				                <option value="7">UOB Malaysia Bank</option>
+				                <option value="8">Bank Rakyat</option>
+				                <option value="9">OCBC Bank Malaysia</option>
+				                <option value="10">HSBC Bank Malaysia</option>
+				                <option value="11">Affin Bank</option>
+				                <option value="12">Bank Islam Malaysia</option>
+				                <option value="13">Standard Chartered Bank Malaysia</option>
+				                <option value="14">CitiBank Malaysia</option>
+			              </select>
+	                	</p>	
+	                </div>
+	                <!--card payment-->
+	                <div id="paydebit">
+	                	<div class="textblue">
+	                		Credit / Debit Card
+	                	</div>
+	                	<p>
+	                		Accepted Card Type:<br>
+			              <i class="fa fa-cc-visa" style="font-size:30px;"></i>
+			              <i class="fa fa-cc-mastercard" style="font-size:30px;"></i>
+			              <br>
+	                	</p>
+	                	<p>
+	                		Enter your card information
+	                	</p>
+	                	<div class="column2">
+	                		<p>
+	                			<label for="cardname">Name on card: 
+	                				<input class="label"  type="text" name="name" size="30" maxlength="30">
+	                			</label>
+	                		</p>
+	                		<p>
+	                			<label for="cardname">Card Number: 
+	                				<input class="label" type="text" name="name" size="30" maxlength="30">
+	                			</label>
+	                		</p>
+	                		<p>
+	                			<label for="cardname">Expiry Date:
+	                			 <input class="label" type="text" name="name" size="20" maxlength="20">
+	                			</label>
+              					<label for="cardname">CVV: 
+              						<input class="label" type="text" name="name" size="5" maxlength="5">
+              					</label>
+	                		</p>
+	                	</div>
+	                </div>
+	                <!--shipping-->
+	                <hr>
+	                <p>
+	                	<b>Shipping Option</b>
+	                </p>
+	                	Select your shipping option: <br>
+			            <input type="radio" name="ship" value="pslj" checked> Poslaju<br>
+			            <input type="radio" name="ship" value="jnt"> J&T Express<br>
+			            <input type="radio" name="ship" value="njv"> Ninja Van<br>
+			            <input type="radio" name="ship" value="dhl"> DHL Ecommerce<br>
+			            <input type="radio" name="ship" value="gdex"> Gdex Express<br>
+			        <br>
+			        <input class="orderbutton" type="submit" value="Place Order">
+            		<input class="orderbutton" type="reset" value="Reset">
+           			<br>
+				</form>
+			</div>
+			<!--column cart info-->
+			<div class="column" style="  margin-right: 50px; box-sizing: border-box; ">
+				
+				<form name="myform" method="post" action="#">
+					<h3>Your Cart:</h3>
+					<fieldset>
+						<!--item 1-->
+						<div class="image-container">
+							<img src="https://i8.amplience.net/i/jpl/jd_FX5354_a?qlt=92" alt="Image1">
+							<div class="producttext">
+								<div class="productname">
+									Adidas 143
+								</div>
+								<div class="otherstext">
+									Size: 40 UK
+									<br>
+									RM 200
+								</div>
+							</div>
+						</div>
+							<p>
+								<b>Quantity:</b>
+								<button type="button" onclick="document.querySelector('#cntr1').value=parseInt(document.querySelector('#cntr1').value)<1?parseInt(document.querySelector('#cntr1').value):parseInt(document.querySelector('#cntr1').value)-1">-</button>
+            					<input class="cntr" type="number" id="cntr1" min="0" max="20" value="0" style="appearance: none; -moz-appearance: textfield;">
+          						<button type="button"onclick="document.querySelector('#cntr1').value=parseInt(document.querySelector('#cntr1').value)>19?parseInt(document.querySelector('#cntr1').value):parseInt(document.querySelector('#cntr1').value)+1">+</button>
+							</p>
+						<br>
+						<!--item 2-->
+							<div class="image-container">
+								<img src="https://i8.amplience.net/i/jpl/jd_FX5354_a?qlt=92" alt="Image2">
+								<div class="producttext">
+									<div class="productname">
+										Adidas 143
+									</div>
+									<div class="otherstext">
+										Size: 40 UK
+										<br>
+										RM 200
+									</div>
+								</div>
+							</div>
+							<p>
+								<b>Quantity:</b>
+								<button type="button" onclick="document.querySelector('#cntr2').value=parseInt(document.querySelector('#cntr2').value)<1?parseInt(document.querySelector('#cntr2').value):parseInt(document.querySelector('#cntr2').value)-1">-</button>
+	            				<input class="cntr" type="number" id="cntr2" min="0" max="20" value="0" style="appearance: none; -moz-appearance: textfield;">
+	          					<button type="button"onclick="document.querySelector('#cntr2').value=parseInt(document.querySelector('#cntr2').value)>19?parseInt(document.querySelector('#cntr2').value):parseInt(document.querySelector('#cntr2').value)+1">+</button>
+							</p>
+					</fieldset>
+					<fieldset>
+							<div class="row">
+								<p>
+									<label for="totalitems">Total items:
+										<div style="margin-top:10px; margin-left: 5px; width: 50px; height: 30px; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 4px; display: flex; justify-content: center; align-items: center;">2</div>
+									</label>
+								</p>
+							</div>
+							<div class="row">
+								<p>
+									<label for="totalpurchase">Total Purchase (RM):
+										<div style="margin-top:10px; margin-left: 5px; width: 50px; height: 30px; background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 4px; display: flex; justify-content: center; align-items: center;">400</div>
+									</label>
+								</p>
+							</div>
+					</fieldset>
+					<fieldset style="padding: 10px; border: hidden;">
+						<div class="input-group">
+		          <input type="text" placeholder=" Membership Promo code" style="border-radius: 5px; border-style: solid;border-color: lightgray; margin-right: 10px; width: 50%; height: 50px">
+		          <div class="input-group-append">
+		            <button type="submit" class="redeembutton">Redeem</button>
+		          </div>
+	          </div>
+        </fieldset>
+				</form>
+			</div>
+    </div>
+		</div>
+	</div>
+
+	<div class="footer">
+            <p>@ 2023 ZJAI Shoes Store. All Rights Reserved</p>
+        </div>
+</body>
+</html>
